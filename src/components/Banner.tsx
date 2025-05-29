@@ -5,7 +5,7 @@ const Banner = () => {
         <p className="bg-[#749B3F1A] w-fit px-4 text-[#749B3F] font-medium py-1 rounded-lg ">
           Welcome to Fresh Harvests
         </p>
-        <h2 className="text-7xl leading-24 max-w-[660px] font-medium mb-4 ">
+        <h2 className="text-7xl leading-24 text-[#212337] max-w-[660px] font-medium mb-4 ">
           Fresh Fruits and Vegetables
         </h2>
         <p className="text-sm text-[#4A4A52] max-w-[448px]">
