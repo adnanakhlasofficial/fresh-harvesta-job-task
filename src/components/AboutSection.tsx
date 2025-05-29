@@ -4,7 +4,7 @@ import SectionTitle from "@/components/SectionTitle";
 
 const AboutSection = () => {
   return (
-    <section className="container mx-auto flex justify-center gap-16 items-center my-24">
+    <section className="container mx-auto px-2 flex justify-center lg:flex-row flex-col gap-16 items-center my-24">
       <div className="w-2/3">
         <Image src={aboutImg} alt="aboutImage" />
       </div>

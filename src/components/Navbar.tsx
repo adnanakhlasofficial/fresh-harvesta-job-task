@@ -1,15 +1,16 @@
 import Link from "next/link";
+import { Heart, ShoppingCart } from "lucide-react";
 
 const Navbar = () => {
   return (
     <>
-      <section className="flex justify-between items-center py-4 container mx-auto">
+      <section className="flex justify-between items-center py-4 container mx-auto px-2">
         <div>
           <h1 className="text-xl font-semibold">
             <Link href="/">Fresh Harvest</Link>
           </h1>
         </div>
-        <div>
+        <div className="hidden lg:block">
           <ul className="flex gap-8 text-[#212337] font-medium">
             <li>
               <Link href="#">Home</Link>
@@ -25,16 +26,27 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div>
+        <div className="hidden lg:block">
           <ul className="flex gap-8 text-[#212337] font-medium">
             <li>
-              <Link href="#">Favourites</Link>
+              <Link className="flex gap-2" href="#">
+                <Heart />
+                Favourites
+              </Link>
             </li>
             <li>
-              <Link href="#">Cart</Link>
+              <Link className="flex gap-2" href="#">
+                <ShoppingCart />
+                Cart
+              </Link>
             </li>
             <li>
-              <Link href="#">Sign in</Link>
+              <Link
+                href="#"
+                className="border border-[#FF6A1A] text-[#FF6A1A] hover:bg-[#FF6A1A] hover:text-white px-6 py-3 rounded-lg"
+              >
+                Sign in
+              </Link>
             </li>
           </ul>
         </div>

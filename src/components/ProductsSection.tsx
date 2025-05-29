@@ -19,7 +19,6 @@ type TProduct = {
 
 const ProductsSection = () => {
   const { data, isLoading, isFetching } = useGetProductsQuery({});
-  console.log(data);
 
   if (isLoading || isFetching) {
     return <p>Loading...</p>;
@@ -35,7 +34,7 @@ const ProductsSection = () => {
         titleClassName="mb-4"
       />
       <ProductCategory />
-      <section className="container mx-auto grid grid-cols-4 gap-6 mt-6">
+      <section className="container mx-auto px-2 place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-6">
         {data?.data?.slice(0, 8).map((product: TProduct) => (
           <ProductCard
             key={product.id}

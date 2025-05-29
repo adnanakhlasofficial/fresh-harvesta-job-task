@@ -10,7 +10,7 @@ const ProductCard = ({
   image: string;
 }) => {
   return (
-    <div className="rounded-lg shadow-lg text-center p-4 bg-[f4f6f6]">
+    <div className="rounded-lg shadow-lg text-center p-4 bg-[f4f6f6] w-[282px]">
       <div>
         <Image
           src={image}

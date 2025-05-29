@@ -18,8 +18,8 @@ const ProductCategory = () => {
   }
 
   return (
-    <section className="container mx-auto">
-      <div className="flex justify-center gap-8 mt-6">
+    <section className="container mx-auto px-2">
+      <div className="flex justify-center gap-8 mt-6 flex-wrap">
         {data?.data?.map((category: TCategory) => {
           return (
             <CategoryButton key={category.id} title={category.categoryName} />
