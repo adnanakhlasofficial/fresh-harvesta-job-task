@@ -26,7 +26,7 @@ const ProductsSection = () => {
   }
 
   return (
-    <section className="py-24">
+    <section className="my-24">
       <SectionTitle
         tag="Our Products"
         title="Our Fresh Products"
@@ -45,6 +45,11 @@ const ProductsSection = () => {
           />
         ))}
       </section>
+      <div className="flex justify-center mt-8">
+        <button className="border-[#FF6A1A] font-medium hover:bg-[#FF6A1A] hover:text-white transition-colors duration-300 cursor-pointer border text-[#FF6A1A] px-8 py-4 rounded-lg">
+          See All Products
+        </button>
+      </div>
     </section>
   );
 };

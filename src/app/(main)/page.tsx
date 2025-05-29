@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import ProductsSection from "@/components/ProductsSection";
 import { Provider } from "react-redux";
 import { store } from "../store";
+import AboutSection from "@/components/AboutSection";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       </header>
       <main>
         <ProductsSection />
+        <AboutSection />
       </main>
     </Provider>
   );
