@@ -171,6 +171,7 @@ const ProductDetails = ({ params }: { params: Promise<{ slug: string }> }) => {
           {products?.data?.slice(0, 4).map((product: TProduct) => (
             <ProductCard
               key={product.id}
+              id={product.id}
               name={product.productName}
               price={product.price}
               image={product.images[0]}

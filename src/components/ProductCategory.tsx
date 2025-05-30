@@ -11,11 +11,7 @@ type TCategory = {
 };
 
 const ProductCategory = () => {
-  const { data, isFetching, isLoading } = useGetProductCategoryQuery({});
-
-  if (isLoading || isFetching) {
-    return <p>Loading</p>;
-  }
+  const { data } = useGetProductCategoryQuery({});
 
   return (
     <section className="container mx-auto px-2">

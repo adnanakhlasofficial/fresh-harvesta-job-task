@@ -1,10 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const ProductCard = ({
+  id,
   name,
   price,
   image,
 }: {
+  id: string;
   name: string;
   price: number;
   image: string;
@@ -20,13 +23,13 @@ const ProductCard = ({
           height={250}
         />
       </div>
-      <div className="mt-3">
+      <Link href={`/product-details/${id}`} className="mt-3">
         <h3 className="text-lg font-medium text-[#212337]">{name}</h3>
         <p className="text-[#4A4A52]">${price}/kg</p>
         <button className="w-full block border border-[#D9D9D9] rounded-lg py-3 mt-3 hover:bg-[#FF6A1A] hover:border-[#FF6A1A] hover:text-white font-medium transition-colors duration-300 cursor-pointer">
           Add to cart
         </button>
-      </div>
+      </Link>
     </div>
   );
 };

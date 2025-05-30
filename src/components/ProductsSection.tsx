@@ -3,6 +3,7 @@ import SectionTitle from "@/components/SectionTitle";
 import ProductCategory from "./ProductCategory";
 import ProductCard from "./ProductCard";
 import { useGetProductsQuery } from "@/services/harvestAPI";
+import ProductSkeleton from "./ProductSkeleton";
 
 export type TProduct = {
   id: string;
@@ -20,10 +21,6 @@ export type TProduct = {
 const ProductsSection = () => {
   const { data, isLoading, isFetching } = useGetProductsQuery({});
 
-  if (isLoading || isFetching) {
-    return <p>Loading...</p>;
-  }
-
   console.log(data);
 
   return (
@@ -36,16 +33,21 @@ const ProductsSection = () => {
         titleClassName="mb-4"
       />
       <ProductCategory />
-      <section className="container mx-auto px-2 place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-6">
-        {data?.data?.slice(0, 8).map((product: TProduct) => (
-          <ProductCard
-            key={product.id}
-            name={product.productName}
-            price={product.price}
-            image={product.images[0]}
-          />
-        ))}
-      </section>
+      {isLoading || isFetching ? (
+        <ProductSkeleton length={8} />
+      ) : (
+        <section className="container mx-auto px-2 place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-6">
+          {data?.data?.slice(0, 8).map((product: TProduct) => (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              name={product.productName}
+              price={product.price}
+              image={product.images[0]}
+            />
+          ))}
+        </section>
+      )}
       <div className="flex justify-center mt-8">
         <button className="border-[#FF6A1A] font-medium hover:bg-[#FF6A1A] hover:text-white transition-colors duration-300 cursor-pointer border text-[#FF6A1A] px-8 py-4 rounded-lg">
           See All Products
