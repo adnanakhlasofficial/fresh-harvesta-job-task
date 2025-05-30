@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <section className="container mx-auto px-2 h-[calc(100vh-60px)] flex flex-col justify-center">
+    <section className="max-w-[1200px] mx-auto px-2 h-[85vh] flex flex-col justify-center">
       <div>
         <p className="bg-[#749B3F1A] w-fit px-4 text-[#749B3F] font-medium py-1 rounded-lg ">
           Welcome to Fresh Harvests

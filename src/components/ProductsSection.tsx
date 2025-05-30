@@ -4,7 +4,7 @@ import ProductCategory from "./ProductCategory";
 import ProductCard from "./ProductCard";
 import { useGetProductsQuery } from "@/services/harvestAPI";
 
-type TProduct = {
+export type TProduct = {
   id: string;
   productName: string;
   description: string;
@@ -23,6 +23,8 @@ const ProductsSection = () => {
   if (isLoading || isFetching) {
     return <p>Loading...</p>;
   }
+
+  console.log(data);
 
   return (
     <section className="my-24">

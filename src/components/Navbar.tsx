@@ -3,8 +3,8 @@ import { Heart, ShoppingCart } from "lucide-react";
 
 const Navbar = () => {
   return (
-    <>
-      <section className="flex justify-between items-center py-4 container mx-auto px-2">
+    <div className="absolute top-0 w-full ">
+      <section className=" flex justify-between items-center py-7 max-w-[1200px] mx-auto px-2">
         <div>
           <h1 className="text-xl font-semibold">
             <Link href="/">Fresh Harvest</Link>
@@ -51,7 +51,7 @@ const Navbar = () => {
           </ul>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

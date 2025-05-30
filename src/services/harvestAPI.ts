@@ -12,9 +12,16 @@ export const harvestAPI = createApi({
     getProducts: builder.query({
       query: () => "/products",
     }),
+    getProductDetails: builder.query({
+      query: (id) => `/products/${id}`,
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetProductCategoryQuery, useGetProductsQuery } = harvestAPI;
+export const {
+  useGetProductCategoryQuery,
+  useGetProductsQuery,
+  useGetProductDetailsQuery,
+} = harvestAPI;
