@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { store } from "../store";
 import AboutSection from "@/components/AboutSection";
 import OfferSection from "@/components/OfferSection";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <ProductsSection />
         <AboutSection />
         <OfferSection />
+        <Testimonials />
       </main>
     </Provider>
   );
