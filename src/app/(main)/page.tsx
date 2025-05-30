@@ -9,6 +9,7 @@ import AboutSection from "@/components/AboutSection";
 import OfferSection from "@/components/OfferSection";
 import Testimonials from "@/components/Testimonials";
 import BlogSection from "@/components/BlogSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -24,6 +25,9 @@ export default function Home() {
         <Testimonials />
         <BlogSection />
       </main>
+      <footer className="bg-[#F4F6F6]">
+        <Footer />
+      </footer>
     </Provider>
   );
 }
