@@ -20,8 +20,8 @@ const Testimonials = () => {
         </div>
         <div className="max-w-xl space-y-8 p-8 bg-[#F4F6F6] rounded-3xl">
           <p className="text-[#4A4A52] text-xl">
-            "I absolutely love Fresh Harvest! The quality of their produce is
-            outstanding. It's always fresh, flavorful, and delicious. The
+            I absolutely love Fresh Harvest! The quality of their produce is
+            outstanding. Its always fresh, flavorful, and delicious. The
             convenience of ordering online and having it delivered to my
             doorstep saves me so much time. Fresh Harvest has become my go-to
             for all my fruit and vegetable needs.
