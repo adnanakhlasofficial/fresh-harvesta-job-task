@@ -1,7 +1,23 @@
-import Link from "next/link";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Heart, ShoppingCart } from "lucide-react";
+import Link from "next/link";
+import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
+import { useState } from "react";
+import PhoneNavbar from "./PhoneNavbar";
 
 const Navbar = () => {
+  const [form, setForm] = useState("login");
+
+  const shiftForm = (value: string) => {
+    setForm(value);
+  };
+
   return (
     <div className="absolute top-0 w-full ">
       <section className=" flex justify-between items-center py-7 max-w-[1200px] mx-auto px-2">
@@ -27,7 +43,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="hidden lg:block">
-          <ul className="flex gap-8 text-[#212337] font-medium">
+          <ul className="flex gap-8 text-[#212337] font-medium items-center">
             <li>
               <Link className="flex gap-2" href="#">
                 <Heart />
@@ -41,14 +57,28 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                href="#"
-                className="border border-[#FF6A1A] text-[#FF6A1A] hover:bg-[#FF6A1A] hover:text-white px-6 py-3 rounded-lg"
-              >
-                Sign in
-              </Link>
+              <Dialog>
+                <DialogTrigger>
+                  <button className="border border-[#FF6A1A] text-[#FF6A1A] hover:bg-[#FF6A1A] hover:text-white px-6 py-3 rounded-lg">
+                    {" "}
+                    Sign in
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="h-fit">
+                  <DialogHeader>
+                    {form === "login" ? (
+                      <LoginForm shiftForm={shiftForm} />
+                    ) : (
+                      <RegisterForm shiftForm={shiftForm} />
+                    )}
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
             </li>
           </ul>
+        </div>
+        <div className="lg:hidden block">
+          <PhoneNavbar />
         </div>
       </section>
     </div>
